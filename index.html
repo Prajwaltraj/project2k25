@@ -1,93 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Prajwal T Raj | Creative Developer & Digital Architect</title>
+    <meta name="description" content="Immersive 3D interactive portfolio of Prajwal T Raj — Creative Developer & Digital Architect. Dual-mode interactive canvas experience.">
+    <meta name="theme-color" content="#f1f1f1">
+
+    <!-- Fonts: Gilroy fallback stack with Google Fonts Syne and Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="nav">
-        <h3><b>PRAJWAL</b>T RAJ*</h3>
-        <button>
-            <p id="datetime"></p>
-            <script>
-                function updateDateTime() {
-                    const now = new Date();
-                    document.getElementById("datetime").innerHTML = 
-                        `${now.getDate()}<br>
-                         ${now.toLocaleString('en-US', { month: 'long' })}<br>
-                         ${now.getFullYear()}<br>
-                         ${now.toLocaleTimeString()}`;
-                }
-            
-                setInterval(updateDateTime, 1000);
-                updateDateTime();
-            </script>
-</button>
-    </div>
-    <div id="main">
-        <div id="page">
-            <div id="loop">
-                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
-                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
-                <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
-            </div>
-            <h3>HI 👋 <br> I'm PRAJWAL T RAJ <br>  </h3>
-            <h4>...SCROLL TO READ</h4>
-            <canvas></canvas>
-        </div>
-        <div id="page1">
-            <div id="right-text">
-                <h3>CYBERFICTION / KEY WORD</h3>
-                <h1>HAVE FUN
-                    <br>
-                    LET'S PLAY
-                    <br>
-                    JUST BE TOGETHER</h1>
-            </div>
-            <div id="left-text">
-                <h1>MAKE A STORY
-                    <br>
-                    TAKE A CHANCE
-                    <br>
-                    BUILD AND OWNED</h1>
-                    <h3>..AND MAINTAIN GOOD HUMANITY</h3>
-            </div>
-        </div>
-        <div id="page2">
-            <div id="text1">
-                <h3>CYBERFICTION / HAVE FUN</h3>
-                <h1>LET'S
-                    <br>
-                    HAVE FUN
-                    <br>
-                    TOGETHER</h1>
-            </div>
-            <div id="text2">
-                <p>LET'S HAVE A BLAST! LET'S JUST THROW AWAY AGE, GENDER, REGION, <br> STATUS, ETC., DON'T COMPETE, DON'T FIGHT, COOPERATE AND SHARE <br> WITH EACH OTHER AND ENJOY IT TOGETHER! SO THAT YOU CAN STAND <br> THERE IN THE NOT-TOO-DISTANT FUTURE AND DREAM OF ANOTHER NEW <br> FUTURE</p>
-            </div>
-        </div>
-        <div id="page3">
-            <div id="text3">
-                <h3>CYBERFICTION / PLAYGROUND</h3>
-                <h1>
+    <!-- Atmospheric Overlays for Cinematic Villain Ambience -->
+    <div id="ambient-overlay"></div>
+    <div id="vignette-overlay"></div>
 
-CYBERFIELD
-<br>
-IS OUR
-<br>
-PLAYGROUND
-                </h1>
-               
+    <!-- Fixed 3D Avatar Canvas: Centered permanently across all viewports -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header id="nav">
+        <h3><b>PRAJWAL</b> T RAJ<span class="star">*</span></h3>
+        <div id="nav-actions">
+            <button id="theme-toggle" type="button" aria-label="Toggle light and villain dark theme" title="Toggle Mode">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">⚡</span>
+                <span class="theme-label">LIGHT</span>
+            </button>
+            <div id="datetime-pill">
+                <span class="pulse-indicator"></span>
+                <p id="datetime"></p>
             </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Main Locomotive Scroll Container -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="page">
+            <div id="loop">
+                <h1><b>PRAJWAL</b> T RAJ IS REDEFINING THE <b><i>FUTURE</i></b> <span>OF THE DIGITAL</span> <span><i>MATRIX.</i></span></h1>
+                <h1><b>PRAJWAL</b> T RAJ IS REDEFINING THE <b><i>FUTURE</i></b> <span>OF THE DIGITAL</span> <span><i>MATRIX.</i></span></h1>
+                <h1><b>PRAJWAL</b> T RAJ IS REDEFINING THE <b><i>FUTURE</i></b> <span>OF THE DIGITAL</span> <span><i>MATRIX.</i></span></h1>
+            </div>
+            <div class="hero-content">
+                <h3 class="hero-intro-text">HI 👋 <br> I'M <b>PRAJWAL T RAJ</b></h3>
+                <span class="hero-role">CREATIVE DEVELOPER & ARCHITECT</span>
+                <div class="scroll-prompt">
+                    <span class="scroll-arrow">↓</span> SCROLL TO ENTER THE SYSTEM
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Philosophy -->
+        <section id="page1" class="story-chapter">
+            <div class="chapter-container">
+                <div class="chapter-col col-left">
+                    <span class="chapter-tag">PRAJWAL T RAJ / PHILOSOPHY</span>
+                    <h2 class="chapter-title">
+                        CRAFT CODE<br>
+                        BEND REALITY<br>
+                        BUILD THE UNSEEN
+                    </h2>
+                </div>
+                <!-- Dedicated Center Clearance for 3D Avatar -->
+                <div class="center-clearance" aria-hidden="true"></div>
+                <div class="chapter-col col-right">
+                    <h2 class="chapter-title align-right">
+                        ENGINEER WORLDS<br>
+                        BREAK CONVENTIONS<br>
+                        COMMAND THE SYSTEM
+                    </h2>
+                    <p class="chapter-subtitle align-right">..WHERE CREATIVE VISION MEETS UNCOMPROMISED CODE</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Craft & Execution -->
+        <section id="page2" class="story-chapter">
+            <div class="chapter-container">
+                <div class="chapter-col col-left">
+                    <span class="chapter-tag">PRAJWAL T RAJ / CRAFT</span>
+                    <h2 class="chapter-title">
+                        OBSESSED<br>
+                        WITH FLUIDITY<br>
+                        & DOMINANCE
+                    </h2>
+                </div>
+                <!-- Dedicated Center Clearance for 3D Avatar -->
+                <div class="center-clearance" aria-hidden="true"></div>
+                <div class="chapter-col col-right">
+                    <p class="chapter-desc align-right">
+                        I DON'T JUST WRITE SCRIPTS; I ARCHITECT LIVING DIGITAL RUNTIMES.
+                        MERGING 3D CANVASES, HIGH-PERFORMANCE INTERPOLATION, AND
+                        INTENTIONAL AESTHETICS TO REDEFINE WHAT'S POSSIBLE IN A BROWSER.
+                        EVERY FRAME HAS A PURPOSE. EVERY INTERACTION LEAVES A LASTING MARK.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Playground / Dominion -->
+        <section id="page3" class="story-chapter">
+            <div class="chapter-container">
+                <!-- Center Clearance keeps avatar in focus -->
+                <div class="center-clearance" aria-hidden="true"></div>
+                <div class="chapter-col col-right col-dominion">
+                    <span class="chapter-tag align-right">PRAJWAL T RAJ / THE SYSTEM</span>
+                    <h2 class="chapter-title align-right dominion-title">
+                        THE DIGITAL<br>
+                        REALM IS MY<br>
+                        DOMINION
+                    </h2>
+                    <div class="social-links align-right">
+                        <a href="https://github.com/Prajwaltraj" target="_blank" rel="noopener">GITHUB</a>
+                        <a href="https://www.linkedin.com/in/prajwal-t-raj/" target="_blank" rel="noopener">LINKEDIN</a>
+                        <a href="mailto:prajwaltraj213@gmail.com">EMAIL</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dependencies: Locomotive Scroll & GSAP ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Application Engine -->
     <script src="scripts.js"></script>
 </body>
 </html>
